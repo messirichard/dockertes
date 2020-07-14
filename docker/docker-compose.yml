@@ -4,7 +4,7 @@ services:
   php:
     build:
       context: ./php
-    image: "${COMPOSE_PROJECT_NAME}/php:${IMAGE_TAG}"
+    image: "samelement/sam-web:php"
     hostname: "${COMPOSE_PROJECT_NAME}-php"
     volumes:
       - ..:/app:cached
@@ -13,7 +13,7 @@ services:
   nginx:
     build:
       context: ./nginx
-    image: "${COMPOSE_PROJECT_NAME}/nginx:${IMAGE_TAG}"
+    image: "samelement/sam-web:nginx"
     hostname: "${COMPOSE_PROJECT_NAME}-nginx"
     ports:
       - "80:80"
